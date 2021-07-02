@@ -1,8 +1,11 @@
-FROM node:12-alpine
+# Stage 1
+FROM node:10-alpine as build
+RUN mkdir -p /app
 WORKDIR /app
-COPY ./package.json ./
+COPY package.json /app
 RUN npm install
-COPY . .
-RUN npm run build
-EXPOSE 80
-CMD ["npm", "run", "start:prod"]
+COPY . /app
+RUN npm run build --prod
+# Stage 2
+FROM nginx:1.17.1-alpine
+COPY --from=build /app/docs /usr/share/nginx/html
