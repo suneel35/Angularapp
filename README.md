@@ -2,6 +2,8 @@
 
 https://dzone.com/articles/how-to-dockerize-angular-app
 
+# Angulars code with docker deployment 
+  https://wkrzywiec.medium.com/build-and-run-angular-application-in-a-docker-container-b65dbbc50be8
 # Angular MEAN MongoDB full Details
 
 https://jasonwatmore.com/post/2019/12/02/angular-nodejs-on-aws-how-to-deploy-a-mean-stack-app-to-amazon-ec2#setup-server
