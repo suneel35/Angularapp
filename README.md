@@ -2,6 +2,9 @@
 
 https://dzone.com/articles/how-to-dockerize-angular-app
 
+# Angular app with docker clear example
+https://www.indellient.com/blog/how-to-dockerize-an-angular-application-with-nginx/
+
 # Angulars code with docker deployment 
   https://wkrzywiec.medium.com/build-and-run-angular-application-in-a-docker-container-b65dbbc50be8
   
