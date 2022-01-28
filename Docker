@@ -1,0 +1,14 @@
+FROM node:14.15.0-alpine
+WORKDIR /app
+RUN apk add git python nginx openrc
+#RUN apk add git nginx openrc
+RUN mkdir /run/nginx/
+RUN chown -R nginx:nginx /run/nginx/
+RUN chmod 775 /run/nginx/
+RUN openrc && touch /run/openrc/softlevel
+COPY . .
+RUN npm i && npm i -g @angular/cli
+RUN node --max_old_space_size=64384  ./node_modules/@angular/cli/bin/ng build --prod --build-optimizer --output-hashing=all
+#RUN ng build --prod
+CMD rc-service nginx start && tail -f /dev/null
+EXPOSE 80
